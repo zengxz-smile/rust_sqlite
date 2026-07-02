@@ -8,6 +8,7 @@ mod transaction_bench;
 mod conflict_bench;
 mod window_bench;
 mod recursive_bench;
+mod udaf_bench;
 
 criterion_group! {
     name = benches;
@@ -43,7 +44,9 @@ criterion_group! {
         // conflict_bench::bench_upsert,
         // conflict_bench::bench_replace,
         // window_bench::bench_window,
-        recursive_bench::bench_recursive,
+        // recursive_bench::bench_recursive,
+        udaf_bench::bench_avg_native,
+        udaf_bench::bench_median_udaf,
 }
 
 criterion_main!(benches);
