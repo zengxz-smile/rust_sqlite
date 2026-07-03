@@ -1,13 +1,13 @@
 use criterion::{criterion_group, criterion_main};
 
-mod test_bench;
-mod query_bench;
-mod update_bench;
-mod type_mapping_bench;
-mod transaction_bench;
-mod conflict_bench;
-mod window_bench;
-mod recursive_bench;
+// mod test_bench;
+// mod query_bench;
+// mod update_bench;
+// mod type_mapping_bench;
+// mod transaction_bench;
+// mod conflict_bench;
+// mod window_bench;
+// mod recursive_bench;
 mod udaf_bench;
 
 criterion_group! {

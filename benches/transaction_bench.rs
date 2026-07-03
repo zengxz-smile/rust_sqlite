@@ -21,6 +21,7 @@ pub fn bench_explicit_tx(c: &mut Criterion) {
     c.bench_function("flush_per_batch", |b| {
         b.iter(|| {
             let mut conn = Connection::open("test_flush.db").unwrap(); // 磁盘库
+            conn.pragma_update(None, "journal_mode", "WAL").unwrap();
             conn.execute("CREATE TABLE IF NOT EXISTS t (id INTEGER)", []).unwrap();
             let tx = conn.transaction().unwrap();
             for i in 0..100 {
