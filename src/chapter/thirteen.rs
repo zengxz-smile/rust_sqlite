@@ -92,6 +92,7 @@
 use rusqlite::{Connection, Result};
 use rusqlite_migration::{Migrations, M};
 
+#[allow(unused)]
 pub fn show() -> Result<()>{
     let mut conn = Connection::open("my_app.db")?;
     conn.pragma_update(None, "journal_mode", "WAL").unwrap();

@@ -9,6 +9,8 @@ use criterion::{criterion_group, criterion_main};
 // mod window_bench;
 // mod recursive_bench;
 mod udaf_bench;
+mod wal_bench;
+mod pragma_bench;
 
 criterion_group! {
     name = benches;
@@ -45,8 +47,14 @@ criterion_group! {
         // conflict_bench::bench_replace,
         // window_bench::bench_window,
         // recursive_bench::bench_recursive,
-        udaf_bench::bench_avg_native,
-        udaf_bench::bench_median_udaf,
+        // udaf_bench::bench_avg_native,
+        // udaf_bench::bench_median_udaf,
+        // wal_bench::bench_write_throughput,
+        // wal_bench::bench_write_disk_throughput,
+        // wal_bench::bench_transaction_commit,
+        // wal_bench::bench_concurrent_readers,
+        wal_bench::bench_checkpoint_overhead,
+        pragma_bench::bench_cache_sizes,
 }
 
 criterion_main!(benches);
